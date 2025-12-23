@@ -1,22 +1,21 @@
 package Main.example.Entities;
 
-public class Customer {
+public class ZooKeeper {
 
     private String name;
 
-    public Customer(String name) {
+    public ZooKeeper(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    public String getModel() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setModel(String name) {
         this.name = name;
     }
 
-    @Override
     public String toString() {
         return name;
     }
