@@ -3,6 +3,7 @@ package Main.example.Entities;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Zoo {
@@ -36,11 +37,10 @@ public class Zoo {
     }
 
     //Searching
-    public Animal findAnimalByName(String name) {
+    public Optional<Animal> findAnimalByName(String name) {
         return animals.stream()
                 .filter(a -> a.getName().equalsIgnoreCase(name))
-                .findFirst()
-                .orElse(null); // Возвращает null, если не найдено
+                .findFirst();
     }
     //Filtering
     public List<Animal> getAnimalsByType(Class<?> clazz) {

@@ -9,6 +9,8 @@ import Main.example.Entities.ForAnimals.Bird;
 import Main.example.Entities.ForAnimals.Lion;
 import Main.example.Entities.ForAnimals.Monkey;
 
+import java.util.Optional;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -37,13 +39,20 @@ public class Main {
         System.out.println("\n=== OPTIONAL ACTIONS ===");
         //Search
         System.out.println("Searching for Simba...");
-        Animal found = myZoo.findAnimalByName("Simba");
-        if (found != null) found.makeSound();
+        Optional<Animal> found = myZoo.findAnimalByName("Simba");
+        if (found.isPresent()) found.get().makeSound();
         //Sort
         System.out.println("\nAnimals sorted by name:");
         myZoo.getSortedAnimals().forEach(System.out::println);
         //Filter(for example only lions)
         System.out.println("\nAll Lions in the zoo:");
         myZoo.getAnimalsByType(Lion.class).forEach(l -> System.out.println("Lion: " + l.getName()));
+
+
+        Animal lion2 = new Lion("Simba");
+        System.out.println("\n=== Testing Equals & HashCode ===");
+        System.out.println("Are lions equal? " + simba.equals(lion2));
+        System.out.println("Lion 1 Hash: " + simba.hashCode());
+        System.out.println("Lion 2 Hash: " + lion2.hashCode());
     }
 }

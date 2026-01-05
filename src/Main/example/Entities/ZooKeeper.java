@@ -20,7 +20,7 @@ public class ZooKeeper {
 
     public void feedAnimal (){
         if (assignedAnimal != null) {
-            System.out.println(name + " feed animal named = ");
+            System.out.println(name + " feed animal named =" + assignedAnimal.getName()) ;
         }
     }
 }
