@@ -8,15 +8,19 @@ public class ZooKeeper {
         this.name = name;
     }
 
-    public String getModel() {
-        return name;
-    }
-
-    public void setModel(String name) {
-        this.name = name;
-    }
-
     public String toString() {
         return name;
+    }
+
+    private Animal assignedAnimal;
+
+    public void setAssignedAnimal(Animal animal) {
+        this.assignedAnimal = animal;
+    }
+
+    public void feedAnimal (){
+        if (assignedAnimal != null) {
+            System.out.println(name + " feed animal named = ");
+        }
     }
 }
