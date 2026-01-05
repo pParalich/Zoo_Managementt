@@ -14,12 +14,12 @@ public class Main {
 
         Animal oor = new Bird("Oor");
         Animal simba = new Lion("Simba");
-        Animal abu = new Monkey("Sergay");
+        Animal sergay = new Monkey("Sergay");
 
         Zoo myZoo = new Zoo(777);
         myZoo.addAnimal(oor);
         myZoo.addAnimal(simba);
-        myZoo.addAnimal(abu);
+        myZoo.addAnimal(sergay);
 
         ZooKeeper keeper = new ZooKeeper("Alikhan");
         keeper.setAssignedAnimal(simba);
